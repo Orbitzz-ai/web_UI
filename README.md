@@ -89,5 +89,3 @@ All content is in the component files. Edit the respective component files to up
 ## License
 
 © 2025 ORBITZ AI. All rights reserved.
-
-
