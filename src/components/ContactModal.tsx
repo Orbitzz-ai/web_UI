@@ -101,7 +101,7 @@ const ContactModal = () => {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-end p-0 md:p-4">
+    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-8 md:pt-16 overflow-y-auto">
       {/* Backdrop */}
       <div 
         className="fixed inset-0 bg-black bg-opacity-50 animate-fade-in"
@@ -109,20 +109,20 @@ const ContactModal = () => {
       ></div>
 
       {/* Modal */}
-      <div className="relative bg-blue-50 rounded-t-3xl md:rounded-3xl w-full md:max-w-md h-full md:h-auto md:max-h-[95vh] overflow-hidden shadow-2xl animate-slide-in-right flex flex-col">
+      <div className="relative bg-blue-50 rounded-lg w-full max-w-md max-h-[90vh] overflow-hidden shadow-2xl animate-fade-in flex flex-col my-4 md:my-8">
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-100 transition-colors z-10"
+          className="absolute top-3 right-3 md:top-4 md:right-4 w-7 h-7 md:w-8 md:h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-100 transition-colors z-10"
         >
-          <svg className="w-5 h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
         {/* Form Content */}
-        <div className="p-6 pt-12 overflow-y-auto flex-1">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+        <div className="p-4 md:p-6 pt-10 md:pt-12 overflow-y-auto flex-1">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6 text-center">
             Start Your Project Discussion
           </h2>
 
@@ -169,8 +169,8 @@ const ContactModal = () => {
             {/* Phone */}
             <div className="relative country-selector">
               <div className="flex items-center bg-white border border-gray-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-primary-500 focus-within:border-transparent">
-                <div className="relative flex items-center">
-                  <span className="text-xl px-2">{countryFlag}</span>
+                <div className="relative flex items-center flex-shrink-0">
+                  <span className="text-lg md:text-xl px-1 md:px-2">{countryFlag}</span>
                   <input
                     type="text"
                     value={countryCode}
@@ -186,21 +186,21 @@ const ContactModal = () => {
                       }
                     }}
                     placeholder="+1"
-                    className="w-16 px-2 py-2.5 bg-transparent text-gray-700 focus:outline-none text-sm border-r border-gray-300"
+                    className="w-12 md:w-16 px-1 md:px-2 py-2.5 bg-transparent text-gray-700 focus:outline-none text-xs md:text-sm border-r border-gray-300"
                   />
                   <button
                     type="button"
                     onClick={() => setShowCountryDropdown(!showCountryDropdown)}
-                    className="px-2 py-2.5 hover:bg-gray-50 transition-colors"
+                    className="px-1 md:px-2 py-2.5 hover:bg-gray-50 transition-colors"
                   >
-                    <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 h-3 md:w-4 md:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
                   
                   {/* Country Dropdown */}
                   {showCountryDropdown && (
-                    <div className="absolute top-full left-0 mt-1 bg-white border border-gray-300 rounded-lg shadow-lg z-20 max-h-60 overflow-y-auto w-64">
+                    <div className="absolute top-full left-0 mt-1 bg-white border border-gray-300 rounded-lg shadow-lg z-20 max-h-60 overflow-y-auto w-56 md:w-64">
                       {countries.map((country) => (
                         <button
                           key={country.code}
@@ -210,10 +210,10 @@ const ContactModal = () => {
                             setCountryFlag(country.flag)
                             setShowCountryDropdown(false)
                           }}
-                          className="w-full flex items-center gap-3 px-4 py-2 hover:bg-gray-50 transition-colors text-left"
+                          className="w-full flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2 hover:bg-gray-50 transition-colors text-left"
                         >
-                          <span className="text-xl">{country.flag}</span>
-                          <span className="text-gray-700 text-sm">{country.code}</span>
+                          <span className="text-lg md:text-xl">{country.flag}</span>
+                          <span className="text-gray-700 text-xs md:text-sm">{country.code}</span>
                           <span className="text-gray-500 text-xs ml-auto">{country.name}</span>
                         </button>
                       ))}
@@ -227,7 +227,7 @@ const ContactModal = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="flex-1 px-3 py-2.5 bg-transparent text-gray-700 placeholder-gray-400 focus:outline-none text-sm"
+                  className="flex-1 px-2 md:px-3 py-2.5 bg-transparent text-gray-700 placeholder-gray-400 focus:outline-none text-xs md:text-sm"
                 />
               </div>
             </div>
@@ -260,10 +260,10 @@ const ContactModal = () => {
 
             {/* Privacy Statement */}
             <div className="flex items-start gap-2">
-              <svg className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 md:w-5 md:h-5 text-primary-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <p className="text-sm text-gray-700">
+              <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
                 Your idea is 100% protected by our{' '}
                 <button
                   type="button"
@@ -278,13 +278,13 @@ const ContactModal = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200"
+              className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 md:py-4 px-4 md:px-6 rounded-lg transition-colors duration-200 text-sm md:text-base"
             >
               Get a Free Consultation
             </button>
 
             {/* Response Guarantee */}
-            <p className="text-sm text-gray-600 text-center">
+            <p className="text-xs md:text-sm text-gray-600 text-center">
               Response guaranteed within 24 hours.
             </p>
           </form>
@@ -295,27 +295,16 @@ const ContactModal = () => {
         @keyframes fade-in {
           from {
             opacity: 0;
+            transform: scale(0.95);
           }
           to {
             opacity: 1;
-          }
-        }
-
-        @keyframes slide-in-right {
-          from {
-            transform: translateX(100%);
-          }
-          to {
-            transform: translateX(0);
+            transform: scale(1);
           }
         }
 
         .animate-fade-in {
           animation: fade-in 0.3s ease-out;
-        }
-
-        .animate-slide-in-right {
-          animation: slide-in-right 0.4s ease-out;
         }
       `}</style>
       <NDAModal isOpen={isNDAOpen} onClose={() => setIsNDAOpen(false)} />

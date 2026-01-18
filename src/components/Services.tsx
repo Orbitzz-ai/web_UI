@@ -86,25 +86,25 @@ const Services = () => {
   const allServices = [...aiFeatures, ...competencies]
 
   return (
-    <section id="services" className="section-padding bg-white">
-      <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+    <section id="services" className="py-0 md:section-padding bg-white">
+      <div className="px-0 md:container-custom">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16 px-4 md:px-0 pt-6 md:pt-0">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4">
             We are offering this services
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-0 md:px-4">
           {allServices.map((service, index) => (
             <div
               key={index}
-              className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-primary-300 hover:shadow-md transition-all duration-300"
+              className="bg-gray-50 p-4 md:p-6 rounded-lg border border-gray-200 hover:border-primary-300 hover:shadow-md transition-all duration-300"
             >
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <div className="text-3xl md:text-4xl mb-3 md:mb-4">{service.icon}</div>
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                 {service.title}
               </h3>
-              <p className="text-gray-900 text-sm leading-relaxed">
+              <p className="text-gray-900 text-xs md:text-sm leading-relaxed">
                 {service.description}
               </p>
             </div>

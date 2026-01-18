@@ -3,27 +3,27 @@ const TrustedBy = () => {
   const companies = [
     {
       name: "Company 1",
-      logo: <img src="/1.svg" alt="Company 1" className="h-20 md:h-24 w-auto object-contain brightness-0 contrast-125" />
+      logo: <img src="/1.svg" alt="Company 1" className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain brightness-0 contrast-125" />
     },
     {
       name: "Company 2",
-      logo: <img src="/2.svg" alt="Company 2" className="h-20 md:h-24 w-auto object-contain brightness-0 contrast-125" />
+      logo: <img src="/2.svg" alt="Company 2" className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain brightness-0 contrast-125" />
     },
     {
       name: "Company 3",
-      logo: <img src="/3.svg" alt="Company 3" className="h-20 md:h-24 w-auto object-contain brightness-0 contrast-125" />
+      logo: <img src="/3.svg" alt="Company 3" className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain brightness-0 contrast-125" />
     },
     {
       name: "Company 4",
-      logo: <img src="/4.svg" alt="Company 4" className="h-20 md:h-24 w-auto object-contain brightness-0 contrast-125" />
+      logo: <img src="/4.svg" alt="Company 4" className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain brightness-0 contrast-125" />
     },
     {
       name: "Company 5",
-      logo: <img src="/5.svg" alt="Company 5" className="h-20 md:h-24 w-auto object-contain brightness-0 contrast-125" />
+      logo: <img src="/5.svg" alt="Company 5" className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain brightness-0 contrast-125" />
     },
     {
       name: "Company 6",
-      logo: <img src="/6.svg" alt="Company 6" className="h-20 md:h-24 w-auto object-contain brightness-0 contrast-125" />
+      logo: <img src="/6.svg" alt="Company 6" className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain brightness-0 contrast-125" />
     }
   ]
 
@@ -31,11 +31,11 @@ const TrustedBy = () => {
     <section id="company" className="section-padding bg-white overflow-hidden w-full">
       <div className="container-custom">
         {/* Gradient line at the top */}
-        <div className="h-0.5 bg-gradient-to-r from-blue-300 via-blue-400 to-purple-400 mb-6"></div>
+        <div className="h-0.5 bg-gradient-to-r from-blue-300 via-blue-400 to-purple-400 mb-4 md:mb-6"></div>
         
         {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-base md:text-lg font-normal text-gray-700">
+        <div className="text-center mb-8 md:mb-12 px-4 md:px-0">
+          <h2 className="text-sm sm:text-base md:text-lg font-normal text-gray-700">
             The world's leading companies trust ORBITZ AI
           </h2>
         </div>
@@ -44,8 +44,8 @@ const TrustedBy = () => {
       {/* Full width carousel section */}
       <div className="relative w-full">
         {/* Gradient overlays for smooth fade effect */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
         
         {/* Scrolling container */}
         <div className="overflow-hidden w-full">
@@ -54,8 +54,8 @@ const TrustedBy = () => {
             {companies.map((company, index) => (
               <div
                 key={`first-${index}`}
-                className="flex-shrink-0 mx-12 flex items-center justify-center"
-                style={{ minWidth: '180px' }}
+                className="flex-shrink-0 mx-3 sm:mx-4 md:mx-8 lg:mx-12 flex items-center justify-center"
+                style={{ minWidth: '100px' }}
               >
                 {company.logo}
               </div>
@@ -64,8 +64,8 @@ const TrustedBy = () => {
             {companies.map((company, index) => (
               <div
                 key={`second-${index}`}
-                className="flex-shrink-0 mx-12 flex items-center justify-center"
-                style={{ minWidth: '180px' }}
+                className="flex-shrink-0 mx-3 sm:mx-4 md:mx-8 lg:mx-12 flex items-center justify-center"
+                style={{ minWidth: '100px' }}
               >
                 {company.logo}
               </div>

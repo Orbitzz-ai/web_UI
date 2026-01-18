@@ -71,22 +71,22 @@ const Hero = () => {
   }, [hasAnimated])
 
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-primary-50 to-white">
+    <section className="pt-24 pb-12 md:pt-32 md:pb-20 lg:pt-40 lg:pb-32 bg-gradient-to-b from-primary-50 to-white">
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Side - Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
               Transform Your Business with
-              <span className="text-primary-600 block mt-2">AI Automation</span>
+              <span className="text-primary-600 block mt-1 md:mt-2">AI Automation</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 md:mb-8 leading-relaxed px-2 md:px-0">
               Powerful, simple, and intelligent. Our AI automation platform creates complete solutions 
               with intelligent workflows, integrations, and customizations that match your brand.
             </p>
             
             {/* Book Demo Section */}
-            <div className="max-w-2xl mx-auto lg:mx-0 mb-6">
+            <div className="max-w-2xl mx-auto lg:mx-0 mb-4 md:mb-6">
               {/* Book a Demo Button */}
               <button 
                 onClick={() => {
@@ -95,7 +95,7 @@ const Hero = () => {
                     contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
                   }
                 }}
-                className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-4 rounded-full transition-colors duration-200 shadow-lg"
+                className="w-full sm:w-auto bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 md:px-8 py-3 md:py-4 rounded-full transition-colors duration-200 shadow-lg text-sm md:text-base"
               >
                 Book a Demo
               </button>
@@ -103,34 +103,34 @@ const Hero = () => {
           </div>
 
           {/* Right Side - SVG Image */}
-          <div className="flex justify-center lg:justify-end items-center">
+          <div className="flex justify-center lg:justify-end items-center mt-6 lg:mt-0">
             <img 
               src="/call-center-isometric-concept.png" 
               alt="ORBITZ AI" 
-              className="w-full max-w-lg lg:max-w-xl xl:max-w-2xl h-auto object-contain"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl h-auto object-contain"
             />
           </div>
         </div>
 
         {/* Stats Section */}
-        <div ref={statsRef} className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div ref={statsRef} className="mt-8 md:mt-12 lg:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto px-4 md:px-0">
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-600 mb-1 md:mb-2">
               {automations.toLocaleString()}+
             </div>
-            <div className="text-gray-600">Automations Deployed</div>
+            <div className="text-sm md:text-base text-gray-600">Automations Deployed</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-600 mb-1 md:mb-2">
               {clients}+
             </div>
-            <div className="text-gray-600">Enterprise Clients</div>
+            <div className="text-sm md:text-base text-gray-600">Enterprise Clients</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-600 mb-1 md:mb-2">
               {uptime.toFixed(1)}%
             </div>
-            <div className="text-gray-600">Uptime SLA</div>
+            <div className="text-sm md:text-base text-gray-600">Uptime SLA</div>
           </div>
         </div>
       </div>

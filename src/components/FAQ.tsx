@@ -40,32 +40,32 @@ const FAQ = () => {
 
   return (
     <section className="section-padding bg-white">
-      <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <div className="px-0 md:container-custom">
+        <div className="text-center mb-8 md:mb-12 lg:mb-16 px-4 md:px-0 pt-6 md:pt-0">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-sm md:text-base lg:text-xl text-gray-600 max-w-3xl mx-auto">
             Everything you need to know about ORBITZ AI
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="space-y-4">
+        <div className="max-w-3xl mx-auto px-0 md:px-4">
+          <div className="space-y-3 md:space-y-4">
             {faqs.map((faq, index) => (
               <div
                 key={index}
                 className="border border-gray-200 rounded-lg overflow-hidden"
               >
                 <button
-                  className="w-full px-6 py-4 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
+                  className="w-full px-4 md:px-6 py-3 md:py-4 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 >
-                  <span className="font-semibold text-gray-900 pr-4">
+                  <span className="font-semibold text-gray-900 pr-3 md:pr-4 text-sm md:text-base">
                     {faq.question}
                   </span>
                   <svg
-                    className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform ${
+                    className={`w-4 h-4 md:w-5 md:h-5 text-gray-500 flex-shrink-0 transition-transform ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                     fill="none"
@@ -76,8 +76,8 @@ const FAQ = () => {
                   </svg>
                 </button>
                 {openIndex === index && (
-                  <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  <div className="px-4 md:px-6 py-3 md:py-4 bg-gray-50 border-t border-gray-200">
+                    <p className="text-gray-700 leading-relaxed text-sm md:text-base">{faq.answer}</p>
                   </div>
                 )}
               </div>
